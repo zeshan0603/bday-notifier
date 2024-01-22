@@ -1,0 +1,35 @@
+{
+    "data": [
+      {
+        "name": "John Doe",
+        "birthdate": "1990-05-15",
+        "imgUrl": "https://example.com/john-doe.jpg"
+      },
+      {
+        "name": "Jane Smith",
+        "birthdate": "1985-09-22",
+        "imgUrl": "https://example.com/jane-smith.jpg"
+      },
+      {
+        "name": "Bob Johnson",
+        "birthdate": "1993-02-10",
+        "imgUrl": "https://example.com/bob-johnson.jpg"
+      },
+      {
+        "name": "Alice Williams",
+        "birthdate": "1988-11-30",
+        "imgUrl": "https://example.com/alice-williams.jpg"
+      },
+      {
+        "name": "Charlie Brown",
+        "birthdate": "1995-07-05",
+        "imgUrl": "https://example.com/charlie-brown.jpg"
+      },
+      {
+        "name": "Eva Green",
+        "birthdate": "1992-04-18",
+        "imgUrl": "https://example.com/eva-green.jpg"
+      }
+    ]
+  }
+  
