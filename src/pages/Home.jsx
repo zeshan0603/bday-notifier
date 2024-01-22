@@ -19,7 +19,7 @@ const Home = () => {
     <div className="home">
       <h1>Welcome to the Birthday Notifier</h1>
       <h2>Todays Date is : {today}</h2>
-      <h2>Current time :{time.toLocaleTimeString()}</h2>
+      <h2>Current time : {time.toLocaleTimeString()}</h2>
     </div>
   )
 };

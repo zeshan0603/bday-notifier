@@ -1,9 +1,20 @@
+import userData from '../assets/db.js'
 
+
+
+userData.map((user)=>{
+  console.log(user)
+})
 
 const Peoples = () => {
   return (
-    <div>
-      <h1>This is the peoples page</h1>
+    <div className='people'>
+      {userData.map((user)=>(
+        <div className="user" key={user.id}>
+          <img src={user.imgUrl}/>
+          <p>{user.name}</p>
+        </div>
+      ))}
     </div>
   )
 };
