@@ -104,14 +104,15 @@ main {
   font-size: 1.4rem;
 }
 
+/* UPCOMING PAGE */
 .swiper {
-  height: 500px;
+  height: 550px;
 
 }
 
 .swiper-slide {
   height: 100%;
-
+  padding-bottom: 50px;
 }
 
 .swiper-slide img {
@@ -135,4 +136,42 @@ main {
   width: 50%;
   height: 100%;
   margin: 0 auto;
+}
+
+.upcoming-user p {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--primary) !important;
+  width: 50px !important;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 5rem !important;
+}
+
+.swiper-pagination-bullet {
+  width: 15px !important;
+  height: 15px !important;
+  background: #5e5e5e !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--primary) !important;
+}
+
+.countdown {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown span {
+  font-size: 2rem;
+  font-weight: bold;
 }
