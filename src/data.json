@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "first_name": "Ayesha",
+        "last_name": "Ahmed",
+        "city": "Karachi"
+    },
+    {
+        "id": 2,
+        "first_name": "Ali",
+        "last_name": "Khan",
+        "city": "Lahore"
+    },
+    {
+        "id": 3,
+        "first_name": "Sana",
+        "last_name": "Malik",
+        "city": "Islamabad"
+    },
+    {
+        "id": 4,
+        "first_name": "Farhan",
+        "last_name": "Hussain",
+        "city": "Rawalpindi"
+    }
+]

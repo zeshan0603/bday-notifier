@@ -13,12 +13,12 @@ import Peoples from "./pages/Peoples";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-  <Route path="/" element={<RootLayout/>}>
-    <Route index element={<Home/>}/>
-    <Route path="upcoming" element={<Upcoming/>}/>
-    <Route path="peoples" element={<Peoples/>}/>
-    <Route path="*" element={<NotFound/>}/>
-  </Route>
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Home />} />
+      <Route path="upcoming" element={<Upcoming />} />
+      <Route path="peoples" element={<Peoples />} />
+      <Route path="*" element={<NotFound />} />
+    </Route>
   )
 );
 
