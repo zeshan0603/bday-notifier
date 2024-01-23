@@ -258,6 +258,8 @@ main {
   font-weight: bold;
 }
 
+.filterContainer {}
+
 
 @media(max-width:992px) {
   nav {

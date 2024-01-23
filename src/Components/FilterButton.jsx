@@ -1,8 +1,11 @@
 
 import PropTypes from 'prop-types'
-const FilteredButton = ({month}) => {
+const FilteredButton = ({month,childToParent}) => {
+
   return (
-    <button className="filter-btn">{month}</button>
+    <>
+    <button onClick={() => childToParent(month)} className="filter-btn">{month}</button>
+    </>
   )
 };
 
