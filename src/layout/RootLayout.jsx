@@ -3,8 +3,8 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import Sidebar from "../Components/Sidebar";
 
 const RootLayout = () => {
-  const [sideBar,setSideBar] = useState(false);
-  const sidebarToggle = ()=>{
+  const [sideBar, setSideBar] = useState(false);
+  const sidebarToggle = () => {
     setSideBar(!sideBar);
     console.log(sideBar)
   }
@@ -14,20 +14,20 @@ const RootLayout = () => {
   };
   return (
     <div className="root-layout">
-        <header>
-            <nav>
-              <Sidebar active={sideBar} onClose={closeSidebar}/>
-              <button className="open-btn" onClick={sidebarToggle}>▶</button>
-                <Link to="/"><h2>Birthday Notifier</h2></Link>
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="upcoming">Upcoming</NavLink>
-                <NavLink to="peoples">Peoples</NavLink>
-            </nav>
-        </header>
+      <header>
+        <nav>
+          <Sidebar active={sideBar} onClose={closeSidebar} />
+          <button className="open-btn" onClick={sidebarToggle}>▶</button>
+          <Link to="/"><h2>Birthday Notifier</h2></Link>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="upcoming">Upcoming</NavLink>
+          <NavLink to="peoples">Peoples</NavLink>
+        </nav>
+      </header>
 
-        <main>
-            <Outlet/>
-        </main>
+      <main>
+        <Outlet />
+      </main>
     </div>
   )
 };

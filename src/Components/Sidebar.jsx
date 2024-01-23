@@ -1,44 +1,49 @@
 
 import PropTypes from 'prop-types'
 import FilteredButton from './FilterButton';
-import Filtered from './Filtered';
 import { useState } from 'react';
+import monthsArr from '../assets/month.js'
+import { Button, Modal } from 'antd';
 
-const Sidebar = ({active,onClose}) => {
 
-  const [month,setMonth] = useState('');
+const Sidebar = ({ active, onClose }) => {
+
+  const [month, setMonth] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   const childToParent = (childdata) => {
     setMonth(childdata);
-  }
+    showModal(); // Show the modal when child data is received
+  };
 
 
   return (
-    <div className={active?"sidebar active":"sidebar"}>
+    <div className={active ? "sidebar active" : "sidebar"}>
       <button className="close-btn" onClick={onClose}>X</button>
-      <FilteredButton month="January" childToParent={childToParent}/>
-      <FilteredButton month="February"childToParent={childToParent}/>
-      <FilteredButton month="March"childToParent={childToParent}/>
-      <FilteredButton month="April"childToParent={childToParent}/>
-      <FilteredButton month="May"childToParent={childToParent}/>
-      <FilteredButton month="June"childToParent={childToParent}/>
-      <FilteredButton month="July"childToParent={childToParent}/>
-      <FilteredButton month="August"childToParent={childToParent}/>
-      <FilteredButton month="September"childToParent={childToParent}/>
-      <FilteredButton month="October"childToParent={childToParent}/>
-      <FilteredButton month="November"childToParent={childToParent}/>
-      <FilteredButton month="December"childToParent={childToParent}/>
+      {monthsArr.map((month) => (
+        <FilteredButton key={month} month={month} onClick={childToParent} childToParent={childToParent} />
+      ))}
 
-      <Filtered monthFromBtn={month}/>
-
+      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <p className='monthss'>{month}</p>
+      </Modal>
     </div>
   )
 };
 
 
 Sidebar.propTypes = {
-    active: PropTypes.bool,
-    onClose: PropTypes.func
+  active: PropTypes.bool,
+  onClose: PropTypes.func
 }
 
 

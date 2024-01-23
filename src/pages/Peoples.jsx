@@ -3,11 +3,7 @@ import userData from '../assets/db.js'
 import Cards from './Cards.jsx';
 import Pagination from './Pagination.jsx';
 
-
-
-
 const Peoples = () => {
-
   const [cards,setCards] = useState([]);
   const [currentPage,setCurrentPage] = useState(1);
   const [cardsPerPage] = useState(6);
