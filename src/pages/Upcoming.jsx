@@ -10,7 +10,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import userData from '../assets/db.js'
-import month from '../assets/month.js';
 
 // Import Swiper styles
 import 'swiper/css';
