@@ -9,13 +9,19 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import userData from '../assets/db.js'
-
 // Import Swiper styles
 import 'swiper/css';
 
-const Upcoming = () => {
 
+let userData;
+if (localStorage.getItem("userData") == null) {
+  userData = [];
+} else {
+  userData = JSON.parse(localStorage.getItem("userData"));
+}
+
+
+const Upcoming = () => {
   const currentDate = new Date();
   const formattedDate = currentDate.toLocaleDateString('en-US', {
     day: '2-digit',
@@ -48,8 +54,6 @@ const Upcoming = () => {
 
   const upcomingArr = userData.filter((user) => compareDates(createUserDate(user)));
 
-
-
   upcomingArr.sort((a, b) => {
     const date1 = new Date(createUserDate(a));
     const date2 = new Date(createUserDate(b));
@@ -60,19 +64,24 @@ const Upcoming = () => {
     if (!completed) {
       return (
         <div className='countdown'>
-          <div>
-            <span>Time Left: </span>
-            <span>{days} days </span>
-            <span>and {hours}:</span>
-            <span>{minutes}:</span>
-            <span>{seconds}</span>
-          </div>
-
+          {days && hours && minutes && seconds ? (
+            <div>
+              <span>Time Left: </span>
+              <span>{days} days </span>
+              <span>and {hours}:</span>
+              <span>{minutes}:</span>
+              <span>{seconds}</span>
+            </div>
+          ) : (
+            <span>Today is their bday</span>
+          )}
         </div>
-      )
+      );
+    } else {
+      // If completed, you might want to display a different message or nothing at all
+      return <div>Today is their bday</div>;
     }
-  }
-
+  };
   return (
     <Swiper
       modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}

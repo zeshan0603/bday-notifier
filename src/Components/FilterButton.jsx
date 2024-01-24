@@ -10,7 +10,8 @@ const FilteredButton = ({month,childToParent}) => {
 };
 
 FilteredButton.propTypes={
-    month:PropTypes.string
+    month:PropTypes.string,
+    childToParent : PropTypes.func
 }
 
 

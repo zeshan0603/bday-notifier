@@ -10,6 +10,10 @@ import Home from "./pages/Home";
 import Upcoming from "./pages/Upcoming";
 import NotFound from "./pages/NotFound";
 import Peoples from "./pages/Peoples";
+import userData from './assets/db.js'
+
+let data = userData;
+localStorage.setItem("userData",JSON.stringify(data))
 
 const router = createBrowserRouter(
   createRoutesFromElements(

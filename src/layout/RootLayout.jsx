@@ -8,20 +8,32 @@ const RootLayout = () => {
     setSideBar(!sideBar);
     console.log(sideBar)
   }
-
   const closeSidebar = () => {
     setSideBar(false);
   };
+      const [showNavbar, setShowNavbar] = useState(false)
+
+    const handleShowNavbar = () => {
+      setShowNavbar(!showNavbar)
+    }
+
   return (
     <div className="root-layout">
       <header>
         <nav>
-          <Sidebar active={sideBar} onClose={closeSidebar} />
-          <button className="open-btn" onClick={sidebarToggle}>▶</button>
-          <Link to="/"><h2>Birthday Notifier</h2></Link>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="upcoming">Upcoming</NavLink>
-          <NavLink to="peoples">Peoples</NavLink>
+        <button className="open-btn" onClick={sidebarToggle}>▶</button>
+          <div className="navbar-container">
+            <Sidebar active={sideBar} onClose={closeSidebar} />
+            <Link to="/"><h2 className="logo">Birthday Notifier</h2></Link>
+            <div className="menu-icon" onClick={handleShowNavbar}>
+            ☰
+            </div>
+            <div className={`nav-links  ${showNavbar && 'active'}`}>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="upcoming">Upcoming</NavLink>
+            <NavLink to="peoples">Peoples</NavLink>
+          </div>
+          </div>
         </nav>
       </header>
 

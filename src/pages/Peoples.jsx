@@ -1,7 +1,15 @@
 import { useEffect, useState } from 'react';
-import userData from '../assets/db.js'
+
 import Cards from './Cards.jsx';
 import Pagination from './Pagination.jsx';
+
+let userData;
+if (localStorage.getItem("userData") == null) {
+  userData = [];
+} else {
+  userData = JSON.parse(localStorage.getItem("userData"));
+}
+
 
 const Peoples = () => {
   const [cards,setCards] = useState([]);

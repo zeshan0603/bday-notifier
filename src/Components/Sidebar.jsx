@@ -3,28 +3,18 @@ import PropTypes from 'prop-types'
 import FilteredButton from './FilterButton';
 import { useState } from 'react';
 import monthsArr from '../assets/month.js'
-import { Button, Modal } from 'antd';
+import Modal from './Modal.jsx';
 
 
 const Sidebar = ({ active, onClose }) => {
 
+  const [openModal,setOpenModal] = useState(false)
   const [month, setMonth] = useState('');
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
-
+  
   const childToParent = (childdata) => {
-    setMonth(childdata);
-    showModal(); // Show the modal when child data is received
+    setMonth(childdata); 
+    setOpenModal(true);// Show the modal when child data is received
   };
-
 
   return (
     <div className={active ? "sidebar active" : "sidebar"}>
@@ -33,9 +23,7 @@ const Sidebar = ({ active, onClose }) => {
         <FilteredButton key={month} month={month} onClick={childToParent} childToParent={childToParent} />
       ))}
 
-      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <p className='monthss'>{month}</p>
-      </Modal>
+    {openModal && <Modal monthFromBtn={month} closeModal={setOpenModal}/>  }
     </div>
   )
 };

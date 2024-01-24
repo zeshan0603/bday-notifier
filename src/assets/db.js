@@ -2,7 +2,7 @@ const data = [
   {
     id: 1,
     name: "John Doe",
-    bDate: 10,
+    bDate: 24,
     bMonth: "January",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
   },
@@ -85,7 +85,7 @@ const data = [
   {
     id: 12,
     name: "User 12",
-    bDate: 27,
+    bDate: 24,
     bMonth: "January",
     imgUrl: "https://cdn-icons-png.flaticon.com/512/4128/4128349.png",
   },
