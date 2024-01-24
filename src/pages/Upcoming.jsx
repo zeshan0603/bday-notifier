@@ -65,7 +65,7 @@ const Upcoming = () => {
       return (
         <div className='countdown'>
           {days && hours && minutes && seconds ? (
-            <div>
+            <div className='countdown-content'>
               <span>Time Left: </span>
               <span>{days} days </span>
               <span>and {hours}:</span>
@@ -91,7 +91,7 @@ const Upcoming = () => {
       pagination={{ clickable: true }}
       loop
       autoplay={{
-        delay: 3500,
+        delay: 3000,
         stopOnLastSlide: false,
       }}
     >
@@ -100,7 +100,7 @@ const Upcoming = () => {
           <div className='upcoming-user'>
             <img src={user.imgUrl} />
             <p>{user.name}</p>
-            <p>Birth Date : {user.bDate}/{user.bMonth}</p>
+            <span>Birth Date : {user.bDate}/{user.bMonth}</span>
             <Countdown date={createUserDate(user)} renderer={renderer} />
           </div>
         </SwiperSlide>

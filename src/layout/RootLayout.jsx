@@ -29,9 +29,9 @@ const RootLayout = () => {
             ☰
             </div>
             <div className={`nav-links  ${showNavbar && 'active'}`}>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="upcoming">Upcoming</NavLink>
-            <NavLink to="peoples">Peoples</NavLink>
+            <NavLink to="/" onClick={handleShowNavbar}>Home</NavLink>
+            <NavLink to="upcoming"onClick={handleShowNavbar}>Upcoming</NavLink>
+            <NavLink to="peoples"onClick={handleShowNavbar}>Peoples</NavLink>
           </div>
           </div>
         </nav>
