@@ -41,15 +41,21 @@ const Upcoming = () => {
   const compareDates = (d1) => {
     let date1 = new Date(d1);
     let currentDate = new Date(formattedDate);
-    if (date1 >= currentDate) {
-      let nextMonthDate = new Date(currentDate);
-      nextMonthDate.setMonth(nextMonthDate.getMonth() + 1);
-      if (date1 < nextMonthDate) {
-        return true;
-      }
+
+    // Get the last day of the current month
+    let lastDayOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
+
+    // Check if the birthday is in the current month or the next month
+    if (
+      (date1.getMonth() === currentDate.getMonth() && date1.getDate() >= currentDate.getDate()) ||
+      (date1.getMonth() === currentDate.getMonth() + 1 && date1.getDate() <= lastDayOfMonth)
+    ) {
+      return true;
     }
     return false;
   };
+
+
 
 
   const upcomingArr = userData.filter((user) => compareDates(createUserDate(user)));

@@ -92,7 +92,7 @@ const data = [
   {
     id: 13,
     name: "User 13",
-    bDate: 30,
+    bDate: 23,
     bMonth: "February",
     imgUrl:
       "https://cdn.esquimaltmfrc.com/wp-content/uploads/2015/09/flat-faces-icons-circle-man-6.png",
